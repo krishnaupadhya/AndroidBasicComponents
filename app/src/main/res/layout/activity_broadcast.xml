@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".broadcast.BroadcastActivity">
+
+    <Button
+        android:id="@+id/manifest_broadcast_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manifest broadcast"
+        app:layout_constraintBottom_toTopOf="@+id/context_broadcast_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+       <Button
+        android:id="@+id/context_broadcast_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Context broadcast"
+        app:layout_constraintBottom_toTopOf="@id/package_name_broadcast_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manifest_broadcast_btn" />
+
+    <Button
+        android:id="@+id/package_name_broadcast_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send broadcast to specific app package name"
+        app:layout_constraintBottom_toTopOf="@id/local_broadcast_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/context_broadcast_btn" />
+
+
+    <Button
+        android:id="@+id/local_broadcast_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Local broadcast"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/context_broadcast_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

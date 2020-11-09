@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".services.ServiceDemoActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Foreground Service"
+            app:layout_constraintBottom_toTopOf="@+id/start_foreground_service_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/start_foreground_service_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Start Foreground Service"
+            app:layout_constraintBottom_toTopOf="@+id/stop_forground_service_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/stop_forground_service_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Foreground Service"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/start_foreground_service_btn" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Bind service"
+            app:layout_constraintBottom_toTopOf="@+id/bind_service_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stop_forground_service_btn" />
+
+        <Button
+            android:id="@+id/bind_service_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bind Service to Activity"
+            app:layout_constraintBottom_toTopOf="@+id/unbind_service_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/unbind_service_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unbind service from Activity"
+            app:layout_constraintBottom_toTopOf="@+id/next_activity_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bind_service_btn" />
+
+        <Button
+            android:id="@+id/next_activity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Navigate to Next Activity to Bind Service"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/unbind_service_btn" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

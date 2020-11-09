@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.componentssample">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".contentprovider.ContentProviderActivity"
+            android:label="@string/title_activity_content_provider"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".SnackBarDemoActivity" />
+        <activity android:name=".services.ServiceDemoActivity" />
+        <activity android:name=".services.SecondBindServiceActivity" />
+        <activity
+            android:name=".services.BindServiceDemoActivity"
+            android:label="@string/title_activity_first_binder_service"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".broadcast.BroadcastActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".services.RandomNumberBinderService" />
+        <service android:name=".services.ScannerForegroundService" />
+
+        <receiver
+            android:name=".broadcast.ManifestBroadcastReceiver"
+            android:directBootAware="true"
+            android:enabled="true"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="android.intent.action.MANIFEST_BROADCAST_ACTION" />
+                <action android:name="android.intent.action.CONFIGURATION_CHANGED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".services.BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
